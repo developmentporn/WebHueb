@@ -5,7 +5,7 @@ using System.Web;
 
 namespace BoldyBuildhui.Models
 {
-    public class Champion
+    public class ChampionMini
     {
         public class ChampionInfo
         {
@@ -62,6 +62,6 @@ namespace BoldyBuildhui.Models
     {
         public string Type { get; set; }
         public string Version { get; set; }
-        public Dictionary<string, Champion> Data { get; set; }
+        public Dictionary<string, ChampionMini> Data { get; set; }
     }
 }

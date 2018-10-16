@@ -37,7 +37,7 @@ namespace BoldyBuildhui.Controllers
             return View(itemList);
         }
 
-        public ActionResult Champion()
+        public ActionResult ChampionMini()
         {
             RootChampion rc = Serializer.deserialize<RootChampion>(@"E:\Programming\Projects\webhueb\BoldyBuildhui\BoldyBuildhui\App_Data\champion.json");
 
