@@ -101,10 +101,5 @@ namespace BoldyBuildhui.Models
 
     }
 
-    public class RootItem
-    {
-        public string Type { get; set; }
-        public string Version { get; set; }
-        public Dictionary<int, Item> Data { get; set; }
-    }
+    
 }

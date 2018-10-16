@@ -1,4 +1,4 @@
-﻿@model List<BoldyBuildhui.Models.ChampionMini>
+﻿@model BoldyBuildhui.Models.ChampionMini
 @{
     Layout = null;
 }
@@ -12,10 +12,9 @@
 </head>
 <body>
     <div>
-        @foreach (var champ in Model)
-        {
-            <p>@champ.Name</p>
-        }
+        <p>Id: @Model.Key</p>
+        <p>Name: @Model.Name</p>
+        <p>Title: @Model.Title</p>
     </div>
 </body>
 </html>

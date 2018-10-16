@@ -58,10 +58,5 @@ namespace BoldyBuildhui.Models
         public ChampionStats Stats { get; set; }
     }
 
-    public class RootChampion
-    {
-        public string Type { get; set; }
-        public string Version { get; set; }
-        public Dictionary<string, ChampionMini> Data { get; set; }
-    }
+    
 }
