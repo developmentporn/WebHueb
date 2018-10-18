@@ -9,18 +9,10 @@ namespace BoldyBuildhui.Models
     {        
         public string Name { get; set; }
         public string Plaintext { get; set; }
-        public ItemImage Image { get; set; }
+        public Image Image { get; set; }
         public ItemGold Gold { get; set; }
         public ItemStats Stats { get; set; }
-
-        public class ItemImage
-        {
-            public string Full { get; set; }
-            public string Sprite { get; set; }
-            public int X { get; set; }
-            public int Y { get; set; }
-        }
-
+        
         public class ItemGold
         {
             public int Base { get; set; }
