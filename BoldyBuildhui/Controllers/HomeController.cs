@@ -16,7 +16,12 @@ namespace BoldyBuildhui.Controllers
         public ActionResult Index()
         {
             string fileName = @"E:\Programming\Projects\webhueb\BoldyBuildhui\BoldyBuildhui\App_Data\champion.json";
-            List<ChampionMini> championsList = JsonConvert.DeserializeObject<RootDTO<ChampionMini>>(fileName).Data.Values.ToList();
+            List<ChampionMini> championsList = new List<ChampionMini>();
+            using (StreamReader reader = new StreamReader(fileName))
+            {
+                string championData = reader.ReadToEnd();
+                championsList = JsonConvert.DeserializeObject<RootDTO<ChampionMini>>(championData).Data.Values.ToList();
+            }            
             ViewBag.Champions = championsList;
 
             return View();
@@ -32,7 +37,7 @@ namespace BoldyBuildhui.Controllers
             StreamReader reader = new StreamReader(response.GetResponseStream());
             string championData = reader.ReadToEnd();
             reader.Close();
-            ChampionMini champ = JsonConvert.DeserializeObject<RootDTO<ChampionMini>>(championData).Data[id];
+            Champion champ = JsonConvert.DeserializeObject<RootDTO<Champion>>(championData).Data[id];
             return View(champ);
         }
 
