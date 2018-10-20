@@ -1,0 +1,5 @@
+header: #f79445
+body layout: #3d3d5c
+content layout: #47476a
+champ name: #f0d361  //Aatrox
+champ title: #f2df94 //Hui z gory

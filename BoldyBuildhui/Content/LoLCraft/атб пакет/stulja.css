@@ -1,0 +1,149 @@
+#content-champion-info {
+    grid-area: champion-info;
+    display: grid;
+    max-width: 200px;
+    max-height: 150px;
+    text-align: center;
+    grid-template-columns: auto auto;
+}
+
+#content-runestats-container {
+    grid-area: runestats;
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-areas: 'runes stats1' 'runes stats2';
+    border-style: solid;
+    border-color: #f79445;
+    border-width: 1px;
+}
+
+.runestats-runes {
+    display: flex;
+    grid-area: runes;
+    flex-wrap: nowrap;
+    border-right-style: solid;
+    border-right-color: #f79445;
+    border-right-width: 1px;
+}
+
+    .runestats-runes > img {
+        margin-bottom: 40px;
+        width: 100%;
+        max-width: 32px;
+        max-height: 32px;
+    }
+
+#runes1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    align-items: flex-start;
+}
+
+#runes2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 20px;
+}
+
+.runestats-stats {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stats {
+    flex: 1 0 34%;
+}
+
+    .stats {
+        color: white;
+    }
+
+#content-itemshop {
+    grid-area: itemshop;
+    display: grid;
+    background-color: white;
+}
+
+#content-inventory-container {
+    grid-area: inventory-container;
+    display: grid;
+    /*max-height: 50px;
+    max-width: 64px;*/
+    grid-template-columns: auto auto auto;
+    grid-gap: 2px;
+    margin: auto;
+}
+
+.img-responsive {
+    max-width: 100%;
+    min-width: 16px;
+    height: auto;
+}
+
+.hpbar {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.page-wrapper {
+    display: grid;
+    grid-template-rows: 80px auto;
+    min-height: 95%;
+}
+
+.champion-find-bar {
+    max-height: 30px;
+    max-width: 240px;
+    grid-area: find-bar;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+}
+
+.text-champ-name {
+    color: #f0d361;
+}
+
+.text-champ-title {
+    color: #f2df94;
+}
+
+.image-champ-portrait {
+    grid-column: 1;
+    vertical-align: central;
+}
+
+.shadowed-border {
+    box-shadow: 0 0 15px 1px black;
+}
+
+#page-content {
+    display: grid;
+    grid-template-rows: 30px 150px auto;
+    grid-template-columns: 240px 150px auto;
+    grid-template-areas: 'find-bar .... ....' 'champion-info inventory-container ....' 'runestats runestats itemshop';
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
+    background-color: #47476a;
+    padding: 20px 80px 20px 80px;
+}
+
+#page-header {
+    background-color: #f79445;
+    background-attachment: fixed;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(56,44,46);
+}
+
+body {
+    background-color: #3d3d5c;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}

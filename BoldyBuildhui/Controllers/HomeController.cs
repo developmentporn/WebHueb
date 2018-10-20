@@ -15,7 +15,7 @@ namespace BoldyBuildhui.Controllers
     {
         public ActionResult Index()
         {
-            string fileName = @"E:\Programming\Projects\webhueb\BoldyBuildhui\BoldyBuildhui\App_Data\champion.json";
+            string fileName = @"D:\govno iz jopi\lulkek\BoldyBuildhui\App_Data\champion.json";
             List<ChampionMini> championsList = new List<ChampionMini>();
             using (StreamReader reader = new StreamReader(fileName))
             {

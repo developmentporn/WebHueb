@@ -164,7 +164,6 @@
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\RootDTO.cs" />
     <Compile Include="Models\Spell.cs" />
-    <Compile Include="Models\SpellVar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
