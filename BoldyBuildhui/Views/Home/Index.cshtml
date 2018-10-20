@@ -9,9 +9,10 @@
 </head>
 <body>
     <div>        
+        
         @foreach (var champ in ViewBag.Champions)
         {
-            <p><a href="/Home/Champion/@champ.Id">@champ.Name</a></p>
+            <p><a href="/Home/Champion/@champ.Id">@champ.Name</a><img src="@string.Format("/Content/champion/{0}", champ.Image.Full)" width="48" height="48"/></p>
         }
     </div>
 </body>

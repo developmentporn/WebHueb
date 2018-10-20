@@ -21,16 +21,17 @@ namespace BoldyBuildhui.Controllers
             {
                 string championData = reader.ReadToEnd();
                 championsList = JsonConvert.DeserializeObject<RootDTO<ChampionMini>>(championData).Data.Values.ToList();
-            }            
+            }
+            Debug.WriteLine(DataDragon.CHAMPIONS);
             ViewBag.Champions = championsList;
 
             return View();
-
         }
 
         
         public ActionResult Champion(string id)
         {
+            Debug.WriteLine("Sooqa");
             Debug.WriteLine($"ID IS {id} NOW");
             WebRequest request = WebRequest.Create($"http://ddragon.leagueoflegends.com/cdn/8.20.1/data/en_US/champion/{id}.json");
             WebResponse response = request.GetResponse();

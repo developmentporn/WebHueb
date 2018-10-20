@@ -8,18 +8,20 @@ using Newtonsoft.Json;
 
 namespace BoldyBuildhui.Models
 {
-    public class DataDragon
+    public static class DataDragon
     {
         static readonly public string URI = "http://ddragon.leagueoflegends.com";
-
-        static readonly public string PREFIX = $"/cdn/{Version}/data/en_US/";
-        static readonly public string CHAMPIONS = PREFIX + "champion.json";        
+        
+        static readonly public string CHAMPIONS = PREFIX + "champion.json";
         static readonly public string CHAMPIONS_FULL = PREFIX + "championFull.json";
         static readonly public string ITEMS = PREFIX + "item.json";
         static readonly public string RUNES = PREFIX + "runesReforged.json";
         static readonly public string SUMMONNER_SPELLS = PREFIX + "summoner.json";
 
         static readonly public string VERSIONS = "/api/versions.json";
+
+        static readonly public string PREFIX = $"/cdn/{Version}/data/en_US/";
+
 
         static public string Version
         {
@@ -32,7 +34,8 @@ namespace BoldyBuildhui.Models
                 string versionsData = sr.ReadToEnd();
                 string currentVersion = JsonConvert.DeserializeObject<List<string>>(versionsData)[0];
                 return currentVersion;
-            }            
+            }
         }
+        public static readonly string HUI = "HUI";
     }
 }
