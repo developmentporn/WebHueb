@@ -12,7 +12,7 @@ namespace BoldyBuildhui.Models
     {
         static readonly public string URI = "http://ddragon.leagueoflegends.com";
 
-        static readonly public string PREFIX = $"/cdn/{Version}/data/en_US/";
+        
         static readonly public string CHAMPIONS = PREFIX + "champion.json";        
         static readonly public string CHAMPIONS_FULL = PREFIX + "championFull.json";
         static readonly public string ITEMS = PREFIX + "item.json";
@@ -34,5 +34,7 @@ namespace BoldyBuildhui.Models
                 return currentVersion;
             }            
         }
+
+        static readonly public string PREFIX = $"/cdn/{Version}/data/en_US/";
     }
 }

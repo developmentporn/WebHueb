@@ -1,0 +1,175 @@
+﻿#content-champion-info {
+    grid-area: champion-info;
+    display: grid;
+    max-width: 200px;
+    max-height: 150px;
+    text-align: center;
+    grid-template-columns: auto auto;
+}
+
+#content-runestats-container {
+    grid-area: runestats;
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-areas: 'runes stats1' 'runes stats2';
+    border-style: solid;
+    border-color: #f79445;
+    border-width: 1px;
+}
+
+.champion-name {
+    text-align: center;
+    margin: auto;
+}
+
+.runestats-runes {
+    display: flex;
+    grid-area: runes;
+    flex-wrap: nowrap;
+}
+
+    .runestats-runes img {
+        margin-bottom: 40px;
+        width: 100%;
+        max-width: 32px;
+        max-height: 32px;
+    }
+
+.runes1, .runes2 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.runes1 {
+    order: 1;
+    margin-left: 20px;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.runes2 {
+    justify-content: space-around;
+    order: 2;
+    align-items: flex-end;
+    margin-right: 20px;
+}
+
+.runestats-stats {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: auto;
+    border-left-color: #f79445;
+    border-left-width: 1px;
+    border-left-style: solid;
+}
+
+.stats-upper {
+    border-bottom-style: solid;
+    border-bottom-color: #f79445;
+    border-bottom-width: 1px;
+}
+
+.stats-font {
+    flex: 1 0 34%;
+    color: white;
+}
+
+#content-itemshop {
+    grid-area: itemshop;
+    display: grid;
+    background-color: white;
+    margin-left: 100px;
+    border-radius: 15px;
+}
+
+#content-inventory-container {
+    grid-area: inventory-container;
+    display: grid;
+    /*max-height: 50px;
+    max-width: 64px;*/
+    grid-template-columns: auto auto auto;
+    grid-gap: 2px;
+    margin: auto;
+}
+
+.img-responsive {
+    max-width: 100%;
+    min-width: 16px;
+    height: auto;
+}
+
+.img-avatar {
+    border-radius: 50%;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+.hpbar {
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-template-columns: 1 / 2;
+}
+
+.page-wrapper {
+    display: grid;
+    grid-template-rows: 80px auto;
+    min-height: 95%;
+}
+
+.champion-find-bar {
+    max-height: 30px;
+    max-width: 240px;
+    grid-area: find-bar;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+}
+
+.text-champ-name {
+    color: #f0d361;
+}
+
+.text-champ-title {
+    color: #f2df94;
+}
+
+.image-champ-portrait {
+    grid-column: 1;
+    vertical-align: central;
+}
+
+.shadowed-border {
+    box-shadow: 0 0 15px 1px black;
+}
+
+#page-content {
+    display: grid;
+    grid-template-rows: 30px 150px auto;
+    grid-template-columns: 240px 150px auto;
+    grid-template-areas: 'find-bar .... ....' 'champion-info inventory-container ....' 'runestats runestats itemshop';
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
+    background-color: #47476a;
+    padding: 20px 80px 20px 80px;
+}
+
+#page-header {
+    background-color: #f79445;
+    background-attachment: fixed;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(56,44,46);
+}
+
+body {
+    background-color: #3d3d5c;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}

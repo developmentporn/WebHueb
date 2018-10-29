@@ -1,6 +1,7 @@
-﻿@model BoldyBuildhui.Models.ChampionMini
+﻿@model BoldyBuildhui.Models.Champion
 @{
     Layout = null;
+    Styles.Render("~/Content/StyleShit.css");
 }
 
 <!DOCTYPE html>
@@ -8,13 +9,13 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/Site.css" />
     <title>Champion</title>
 </head>
 <body>
-    <div>
-        <p>Id: @Model.Key</p>
-        <p>Name: @Model.Name</p>
-        <p>Title: @Model.Title</p>
-    </div>
+    
+    @RenderBody();
+    @Scripts.Render("~/Scripts/jquery-3.3.1.js")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
 </body>
 </html>

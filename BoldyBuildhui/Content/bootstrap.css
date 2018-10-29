@@ -1386,8 +1386,10 @@ a.bg-success:hover,
 a.bg-success:focus {
   background-color: #c1e2b3;
 }
-.bg-info {
+div.bg-info {
   background-color: #d9edf7;
+  width: 350px;
+  height: 350px;
 }
 a.bg-info:hover,
 a.bg-info:focus {

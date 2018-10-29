@@ -15,21 +15,22 @@ namespace BoldyBuildhui.Controllers
     {
         public ActionResult Index()
         {
-            string fileName = @"D:\govno iz jopi\lulkek\BoldyBuildhui\App_Data\champion.json";
+            string fileName = @"E:\Programming\Projects\webhueb\lulkek\BoldyBuildhui\App_Data\champion.json";
             List<ChampionMini> championsList = new List<ChampionMini>();
             using (StreamReader reader = new StreamReader(fileName))
             {
                 string championData = reader.ReadToEnd();
                 championsList = JsonConvert.DeserializeObject<RootDTO<ChampionMini>>(championData).Data.Values.ToList();
-            }            
+            }
+            ViewBag.Version = DataDragon.Version;
             ViewBag.Champions = championsList;
 
-            return View();
+            return PartialView();
 
         }
 
         
-        public ActionResult Champion(string id)
+        public ActionResult ChampionPartial(string id)
         {
             Debug.WriteLine($"ID IS {id} NOW");
             WebRequest request = WebRequest.Create($"http://ddragon.leagueoflegends.com/cdn/8.20.1/data/en_US/champion/{id}.json");
@@ -37,8 +38,14 @@ namespace BoldyBuildhui.Controllers
             StreamReader reader = new StreamReader(response.GetResponseStream());
             string championData = reader.ReadToEnd();
             reader.Close();
+            string filename = @"E:\Programming\Projects\webhueb\lulkek\BoldyBuildhui\App_Data\item.json";
+            reader = new StreamReader(filename);
+            string itemsData = reader.ReadToEnd();
+            var items = JsonConvert.DeserializeObject<RootDTO<Item>>(itemsData).Data;
             Champion champ = JsonConvert.DeserializeObject<RootDTO<Champion>>(championData).Data[id];
-            return View(champ);
+            champ.Inventory[0] = items["1001"];
+            ViewBag.Items = items;
+            return PartialView(champ);
         }
 
     }

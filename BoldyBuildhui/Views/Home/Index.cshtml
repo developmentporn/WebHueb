@@ -1,18 +1,18 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml"; ;
+    @Styles.Render("~/Content/Site.css");
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>BoldyBuild</title>
-</head>
-<body>
-    <div>        
-        @foreach (var champ in ViewBag.Champions)
-        {
-            <p><a href="/Home/Champion/@champ.Id">@champ.Name</a></p>
-        }
-    </div>
-</body>
-</html>
+<div class="champ-list">        
+    @foreach (var champ in ViewBag.Champions)
+    {
+    <a href="/Home/ChampionPartial/@champ.Id">
+        <div class="champ-list-item">
+            <img src="@string.Format("/Content/champion/{0}", champ.Image.Full)" width="64" height="64" />
+            <div class="champ-info">
+                <p class="champ-name">@champ.Name</p>
+                <p class="champ-title">@champ.Title</p>
+            </div>
+        </div>
+    </a>
+    }
+</div>

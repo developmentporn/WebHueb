@@ -1,0 +1,24 @@
+{
+  "assosiatedChampion": "Aatrox",
+  "name": "Deathbringer Stance",
+  "description": "Aatrox deals bonus damage on his next attack and reduces heals and shields on the target.",
+  "tooltip": "INNATE: Aatrox's next basic attack gains 50 bonus range icon 50 bonus range and deals {{ e0 }} of the target's maximum health as Attack damage bonus physical damage on-hit, capped at 400 against monsters. Enemy champions are also Mutilator Mutilated for 3 seconds.<br>Deathbringer Stance's Cooldown reduction icon cooldown is reduced by 2 seconds when Aatrox casts an ability or hits a champion with the edge of The Darkin Blade The Darkin Blade.",
+  "image": {
+    "full": "Aatrox_Passive.AatroxUpdate.png",
+    "sprite": "passive0.png",
+    "x": 0,
+    "y": 0
+  },
+  "effect": [
+    [ 8, 8.47, 8.94, 9.41, 9.88, 10.35, 10.82, 11.29, 11.76, 12.24, 12.71, 13.18, 13.65, 14.12, 14.59, 15.06, 15.53, 16 ],
+    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+    [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+  ],
+  "cooldown": 25
+}

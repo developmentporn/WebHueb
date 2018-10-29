@@ -1,0 +1,80 @@
+﻿@model BoldyBuildhui.Models.Champion
+@{
+    Layout = "~/Views/Home/Champion.cshtml";
+    Styles.Render("~/Content/StyleShit.css");
+}
+<div id="page-content" class="shadowed-border">
+    <input type="text" value="Enter champion" class="champion-find-bar" />
+    <div id="content-champion-info">
+        <img src="@string.Format("/Content/champion/{0}", Model.Image.Full)" class="img-responsive img-avatar" />
+        <div class="champion-name">
+            <p class="text-champ-name">@Model.Name</p>
+            <p class="text-champ-title">@Model.Title</p>
+        </div>
+        <div class="bar"><div class="health-bar">@Convert.ToInt32(Model.Stats.Hp)</div></div>
+        <div class="bar"><div class="resource-bar">@Convert.ToInt32(Model.Stats.Mp)</div></div>
+    </div>
+
+    <div id="content-inventory-container">
+        @foreach (var item in Model.Inventory)
+        {
+            if (item != null)
+            {
+                <img src="@string.Format("/Content/item/{0}", item.Image.Full)" class="img-responsive" />
+            }
+            else
+            {
+                <img src="~/Content/emptyicon.png" class="img-responsive" />
+            }
+        }
+        
+    </div>
+
+    <div id="content-runestats-container">
+        <div class="runestats-runes runes1">
+            <img src="img/rune.png" />
+            <img src="img/rune.png" />
+            <img src="img/rune.png" />
+            <img src="img/rune.png" />
+        </div>
+        <div class="runestats-runes runes2">
+            <img src="img/rune2.png" />
+            <img src="img/rune2.png" />
+            <img src="img/rune2.png" />
+        </div>
+
+        <div class="runestats-stats stats-upper">
+            <p class="stats-font">@Model.Stats.AttackDamage</p>
+            <p class="stats-font">@Model.Stats.AbilityPower</p>
+            <p class="stats-font">@Model.Stats.Armor</p>
+            <p class="stats-font">@Model.Stats.SpellBlock</p>
+            <p class="stats-font">@Model.Stats.AttackSpeed</p>
+            <p class="stats-font">@Model.Stats.CooldownReduction</p>
+            <p class="stats-font">@Model.Stats.AttackRange</p>
+            <p class="stats-font">@Model.Stats.MoveSpeed</p>
+        </div>
+        <div class="runestats-stats">
+            <p class="stats-font">21</p>
+            <p class="stats-font">22</p>
+            <p class="stats-font">23</p>
+            <p class="stats-font">24</p>
+            <p class="stats-font">25</p>
+            <p class="stats-font">26</p>
+            <p class="stats-font">27</p>
+            <p class="stats-font">28</p>
+            <p class="stats-font">29</p>
+            <p class="stats-font">210</p>
+        </div>
+    </div>
+
+    <div id="content-itemshop">
+        @foreach(var item in ViewBag.Items)
+        {
+            <img src="@string.Format("/Content/item/{0}", item.Value.Image.Full)" id="@item.Key" class="img-responsive img-item" onclick=""/>
+        }
+    </div>
+
+    <script type="text/javascript">
+        function addItem() { }
+    </script>
+</div>
