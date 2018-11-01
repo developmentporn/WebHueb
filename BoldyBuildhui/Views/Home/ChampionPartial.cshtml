@@ -2,6 +2,7 @@
 @{
     Layout = "~/Views/Home/Champion.cshtml";
     Styles.Render("~/Content/StyleShit.css");
+    Model.Stats.Level = 18;
 }
 <div id="page-content" class="shadowed-border">
     <input type="text" value="Enter champion" class="champion-find-bar" />
@@ -13,6 +14,7 @@
         </div>
         <div class="bar"><div class="health-bar">@Convert.ToInt32(Model.Stats.Hp)</div></div>
         <div class="bar"><div class="resource-bar">@Convert.ToInt32(Model.Stats.Mp)</div></div>
+        <div class="bar">Level: @Model.Stats.Level</div>
     </div>
 
     <div id="content-inventory-container">
@@ -44,33 +46,34 @@
         </div>
 
         <div class="runestats-stats stats-upper">
-            <p class="stats-font">@Model.Stats.AttackDamage</p>
-            <p class="stats-font">@Model.Stats.AbilityPower</p>
-            <p class="stats-font">@Model.Stats.Armor</p>
-            <p class="stats-font">@Model.Stats.SpellBlock</p>
-            <p class="stats-font">@Model.Stats.AttackSpeed</p>
+            <p class="stats-font">@Math.Round(Model.Stats.AttackDamage)</p>
+            <p class="stats-font">@Math.Round(Model.Stats.AbilityPower)</p>
+            <p class="stats-font">@Math.Round(Model.Stats.Armor)</p>
+            <p class="stats-font">@Math.Round(Model.Stats.SpellBlock)</p>
+            <p class="stats-font">@Math.Round(Model.Stats.AttackSpeed, 3)</p>
             <p class="stats-font">@Model.Stats.CooldownReduction</p>
-            <p class="stats-font">@Model.Stats.AttackRange</p>
-            <p class="stats-font">@Model.Stats.MoveSpeed</p>
+            <p class="stats-font">@Model.Stats.Crit</p>
+            <p class="stats-font">@Math.Round(Model.Stats.MoveSpeed)</p>
         </div>
         <div class="runestats-stats">
-            <p class="stats-font">21</p>
-            <p class="stats-font">22</p>
-            <p class="stats-font">23</p>
-            <p class="stats-font">24</p>
-            <p class="stats-font">25</p>
-            <p class="stats-font">26</p>
-            <p class="stats-font">27</p>
-            <p class="stats-font">28</p>
-            <p class="stats-font">29</p>
-            <p class="stats-font">210</p>
+            <p class="stats-font">@Math.Round(Model.Stats.HpRegen)</p>
+            <p class="stats-font">@Math.Round(Model.Stats.MpRegen)</p>
+            <p class="stats-font">@Math.Round(Model.Stats.Lethality) | @Math.Round(Model.Stats.ArmorPenetration)</p>
+            <p class="stats-font">@Math.Round(Model.Stats.MagicPenetration) | @Math.Round(Model.Stats.MagicPenetrationPercentage)</p>
+            <p class="stats-font">@Math.Round(Model.Stats.LifeSteal)</p>
+            <p class="stats-font">@Math.Round(Model.Stats.SpellVamp)</p>
+            <p class="stats-font">@Model.Stats.AttackRange</p>
+            <p class="stats-font">@Model.Stats.Tenacity</p>
         </div>
     </div>
 
     <div id="content-itemshop">
         @foreach(var item in ViewBag.Items)
         {
-            <img src="@string.Format("/Content/item/{0}", item.Value.Image.Full)" id="@item.Key" class="img-responsive img-item" onclick=""/>
+            if (item.Value.InStore && item.Value.Maps["11"] && (item.Value.RequiredChampion == null) && (item.Value.Tags.Count >= 0))
+            {
+                <img src="@string.Format("/Content/item/{0}", item.Value.Image.Full)" id="@item.Key" class="img-responsive img-item" onclick=""/>
+            }
         }
     </div>
 

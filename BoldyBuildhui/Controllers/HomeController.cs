@@ -44,6 +44,7 @@ namespace BoldyBuildhui.Controllers
             var items = JsonConvert.DeserializeObject<RootDTO<Item>>(itemsData).Data;
             Champion champ = JsonConvert.DeserializeObject<RootDTO<Champion>>(championData).Data[id];
             champ.Inventory[0] = items["1001"];
+            champ.Inventory[1] = items["3113"];
             ViewBag.Items = items;
             return PartialView(champ);
         }

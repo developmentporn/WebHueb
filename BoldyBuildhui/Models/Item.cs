@@ -12,6 +12,17 @@ namespace BoldyBuildhui.Models
         public Image Image { get; set; }
         public ItemGold Gold { get; set; }
         public ItemStats Stats { get; set; }
+        public Dictionary<string, bool> Maps { get; set; }
+        public bool InStore { get; set; }
+        public string RequiredChampion { get; set; }
+        public List<string> Tags { get; set; }
+
+        public Item()
+        {
+            InStore = true;
+            RequiredChampion = null;
+            Tags = new List<string>();
+        }
         
         public class ItemGold
         {

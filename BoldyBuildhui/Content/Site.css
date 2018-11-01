@@ -260,6 +260,7 @@ textarea {
 .stats-font {
     flex: 1 0 34%;
     color: white;
+    align-content: flex-end;
 }
 
 #content-itemshop {
